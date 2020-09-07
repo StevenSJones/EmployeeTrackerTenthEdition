@@ -24,11 +24,11 @@ connection.connect(function (err) {
 });
 
 //my function definition for my init function
-function runSearch() {
+
   function runSearch() {
     inquirer.prompt({
-      name: "action",
-      type: "rawlist",
+      name: "prompt",
+      type: "list",
       message: "What would you like to do?",
       choices: [
         "View All Employees",
@@ -46,7 +46,53 @@ function runSearch() {
         "Remove A Department",
         "Quit"
       ],
+      //.then to handle the response
+    }).then(function (response) {
+        console.log(response)
+      if(response.prompt === "View All Employees") {
+        ViewAllEmployees();
+        start();
+      }else if (response.prompt === "View All Departments"){
+        ViewAllDepartments();
+        start();
+      }else if (response.prompt === "View All Employees By manager"){
+        ViewByManager();
+        start();
+      }else if (response.prompt === "Add An Employee"){
+        AddEmployee();
+        start();
+      }else if (response.prompt === "Remove An Employee"){
+        RemoveEmployee();
+        start();
+      }else if (response.prompt === "Update An Employee Role"){
+        UpdateRole();
+        start();
+      }else if (response.prompt === "Update An Employee Manager"){
+        UpdateManager();
+        start();
+      }else if (response.prompt === "View All Roles"){
+        ViewRoles();
+        start();
+      }else if (response.prompt === "Add A Role"){
+        AddRole();
+        start();
+      }else if (response.prompt === "Remove A Role"){
+        RemoveRole();
+        start();
+      }else if (response.prompt === "View All departments"){
+        Viewdepartments();
+        start();
+      }else if (response.prompt === "Add A Department"){
+        AddDepartment();
+        start();
+      }else if (response.prompt === "Remove A Department"){
+        RemoveDepartment();
+        start();
+      }else{
+        Quit();
+      }
     });
-  }
-}
-//.then to handle the response
+  };
+
+  
+
