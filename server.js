@@ -20,13 +20,14 @@ const connection = mysql.createConnection({
 
 connection.connect(function (err) {
   if (err) throw err;
-  runSearch();//the init function being CALLED
+  runSearch(); //the init function being CALLED
 });
 
 //my function definition for my init function
 
-  function runSearch() {
-    inquirer.prompt({
+function runSearch() {
+  inquirer
+    .prompt({
       name: "prompt",
       type: "list",
       message: "What would you like to do?",
@@ -44,55 +45,69 @@ connection.connect(function (err) {
         "View All departments",
         "Add A Department",
         "Remove A Department",
-        "Quit"
+        "Quit",
       ],
       //.then to handle the response
-    }).then(function (response) {
-        console.log(response)
-      if(response.prompt === "View All Employees") {
+    })
+    .then(function (response) {
+      console.log(response);
+      if (response.prompt === "View All Employees") {
         ViewAllEmployees();
         start();
-      }else if (response.prompt === "View All Departments"){
+      } else if (response.prompt === "View All Departments") {
         ViewAllDepartments();
         start();
-      }else if (response.prompt === "View All Employees By manager"){
+      } else if (response.prompt === "View All Employees By manager") {
         ViewByManager();
         start();
-      }else if (response.prompt === "Add An Employee"){
+      } else if (response.prompt === "Add An Employee") {
         AddEmployee();
         start();
-      }else if (response.prompt === "Remove An Employee"){
+      } else if (response.prompt === "Remove An Employee") {
         RemoveEmployee();
         start();
-      }else if (response.prompt === "Update An Employee Role"){
+      } else if (response.prompt === "Update An Employee Role") {
         UpdateRole();
         start();
-      }else if (response.prompt === "Update An Employee Manager"){
+      } else if (response.prompt === "Update An Employee Manager") {
         UpdateManager();
         start();
-      }else if (response.prompt === "View All Roles"){
+      } else if (response.prompt === "View All Roles") {
         ViewRoles();
         start();
-      }else if (response.prompt === "Add A Role"){
+      } else if (response.prompt === "Add A Role") {
         AddRole();
         start();
-      }else if (response.prompt === "Remove A Role"){
+      } else if (response.prompt === "Remove A Role") {
         RemoveRole();
         start();
-      }else if (response.prompt === "View All departments"){
+      } else if (response.prompt === "View All departments") {
         Viewdepartments();
         start();
-      }else if (response.prompt === "Add A Department"){
+      } else if (response.prompt === "Add A Department") {
         AddDepartment();
         start();
-      }else if (response.prompt === "Remove A Department"){
+      } else if (response.prompt === "Remove A Department") {
         RemoveDepartment();
         start();
-      }else{
+      } else {
         Quit();
       }
     });
-  };
-
-  
-
+}
+//View All Employess function definition
+const ViewAllEmployees = function () {
+  connection.query("SELECT * FROM employee", function (err, res) {
+    if (err) throw err;
+    console.log("---------------------------------");
+    console.table(res);
+  });
+};
+//View All Departments function definition
+const ViewAllDepartments = function () {
+  connection.query("SELECT * FROM department", function (err, res) {
+    if (err) throw err;
+    console.log("---------------------------------");
+    console.table(res);
+  });
+};
