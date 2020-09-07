@@ -3,7 +3,8 @@ const mysql = require("mysql");
 const inquirer = require("inquirer");
 const cTable = require("console.table");
 
-var connection = mysql.createConnection({
+//connection for my server
+const connection = mysql.createConnection({
   host: "localhost",
 
   // Your port; if not 3306
@@ -19,9 +20,10 @@ var connection = mysql.createConnection({
 
 connection.connect(function (err) {
   if (err) throw err;
-  runSearch();
+  runSearch();//the init function being CALLED
 });
 
+//my function definition for my init function
 function runSearch() {
   function runSearch() {
     inquirer.prompt({
@@ -47,3 +49,4 @@ function runSearch() {
     });
   }
 }
+//.then to handle the response

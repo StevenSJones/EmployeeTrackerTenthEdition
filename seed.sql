@@ -1,10 +1,12 @@
+-- The CREATE DATABASE statement is used to create a new SQL database.
 USE employees;
-
+--The INSERT INTO statement is used here to insert rows into the department table
 INSERT INTO department (departmentName) 
-VALUES ('Sales'), ('Engineering'), ('Finance'), ('Legal');
+VALUES ('Sales'), ('Engineering'), ('Finance'), ('Legal');--the VALUES inserted into the table
 
+--The INSERT INTO statement is used here to insert rows into the department table
 INSERT INTO role (title, salary, department_id);
-VALUES ('Sales Manager', 170000, 1),
+VALUES ('Sales Manager', 170000, 1),--the VALUES inserted into the table
 ('Sales Lead', 120000, 1),
 ('Sales', 110000, 1),
 ('Engineering Manager', 150000, 2),
@@ -17,6 +19,7 @@ VALUES ('Sales Manager', 170000, 1),
 ('Lawyer', 180000, 4),
 ('Legal', 170000, 4);
 
+--The INSERT INTO statement is used here to insert rows into the department table
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
 VALUES ('Moriah', 'Kincheloe', 1, 1),
 ('Geovonni', 'Banano', 2, 1),
