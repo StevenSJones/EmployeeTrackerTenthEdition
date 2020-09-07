@@ -17,20 +17,20 @@ VALUES ('Sales Manager', 170000, 1),
 ('Lawyer', 180000, 4),
 ('Legal', 170000, 4);
 
-INSERT INTO employee (first_name, last_name, role_id, manager_id);
-VALUES ('Moriah', 'Kincheloe', 1),
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
+VALUES ('Moriah', 'Kincheloe', 1, 1),
 ('Geovonni', 'Banano', 2, 1),
 ('Teriah', 'Corleone', 3, 1),
 ('Rusty', 'Bohnsteil', 3, 1),
-('Shayla', 'Griffin', 4),
+('Shayla', 'Griffin', 4, 4),
 ('Jada', 'Prentiss', 5, 4),
 ('Elizabeth', 'Rodriguez', 6, 4),
 ('Craig', 'Ofthecreek', 6, 4),
-('Lori', 'Monk', 7),
+('Lori', 'Monk', 7, 7),
 ('Fred', 'Monk', 8, 7),
 ('Penny', 'Gracey', 9, 7),
 ('Mitchell', 'Jackson', 9, 7),
-('Steven', 'Griffin', 10),
+('Steven', 'Griffin', 10, 10),
 ('Leslee', 'Jones', 11, 10),
 ('Steven', 'Jones', 12, 10),
 ('Tucky', 'Becker', 12, 10);
