@@ -95,7 +95,7 @@ function runSearch() {
       }
     });
 }
-//View All Employess function definition
+//View All Employees function definition
 const ViewAllEmployees = function () {
   connection.query("SELECT * FROM employee", function (err, res) {
     if (err) throw err;
@@ -106,6 +106,14 @@ const ViewAllEmployees = function () {
 //View All Departments function definition
 const ViewAllDepartments = function () {
   connection.query("SELECT * FROM department", function (err, res) {
+    if (err) throw err;
+    console.log("---------------------------------");
+    console.table(res);
+  });
+};
+//View All Roles function definition
+const ViewByManager = function () {
+  connection.query("SELECT * FROM role", function (err, res) {
     if (err) throw err;
     console.log("---------------------------------");
     console.table(res);
