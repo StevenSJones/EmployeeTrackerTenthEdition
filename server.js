@@ -54,11 +54,11 @@ function runSearch() {
       if (response.prompt === "View All Employees") {
         ViewAllEmployees();
         start();
-      } else if (response.prompt === "View All Departments") {
-        ViewAllDepartments();
+      } else if (response.prompt === "View Employees By Department") {
+        ViewEmployeeByDepartment();
         start();
       } else if (response.prompt === "View All Employees By manager") {
-        ViewByManager();
+        ViewEmployeeByManager();
         start();
       } else if (response.prompt === "Add An Employee") {
         AddEmployee();
@@ -67,13 +67,13 @@ function runSearch() {
         RemoveEmployee();
         start();
       } else if (response.prompt === "Update An Employee Role") {
-        UpdateRole();
+        UpdateEmployeeRole();
         start();
       } else if (response.prompt === "Update An Employee Manager") {
-        UpdateManager();
+        UpdateEmployeeManager();
         start();
       } else if (response.prompt === "View All Roles") {
-        ViewRoles();
+        ViewAllRoles();
         start();
       } else if (response.prompt === "Add A Role") {
         AddRole();
@@ -112,10 +112,13 @@ const ViewAllDepartments = function () {
   });
 };
 //View All Roles function definition
-const ViewByManager = function () {
+const ViewRoles = function () {
   connection.query("SELECT * FROM role", function (err, res) {
     if (err) throw err;
     console.log("---------------------------------");
     console.table(res);
   });
 };
+
+
+
