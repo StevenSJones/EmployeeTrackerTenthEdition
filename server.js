@@ -38,48 +38,48 @@ function runSearch() {
       console.log(response);
       if (response.prompt === "View All Employees") {
         viewAllEmployees(); //calling the viewAllEmployees()
-        start();
+        runSearch();
       } else if (response.prompt === "View Employees By Department") {
         viewEmployeeByDepartment(); //calling the viewEmployeeByDepartment()
-        start();
+        runSearch();
       } else if (response.prompt === "View All Employees By manager") {
         viewEmployeeByManager(); //calling the viewEmployeeByManager()
-        start();
+        runSearch();
       } else if (response.prompt === "Add An Employee") {
         addEmployee(); //calling the addEmployee()
-        start();
+        runSearch();
       } else if (response.prompt === "Remove An Employee") {
         removeEmployee(); //calling the removeEmployee()
-        start();
+        runSearch();
       } else if (response.prompt === "Update An Employee Role") {
         updateEmployeeRole(); //calling the updateEmployeeRole()
-        start();
+        runSearch();
       } else if (response.prompt === "Update An Employee Manager") {
         updateEmployeeManager(); //calling the updateEmployeeManager()
-        start();
+        runSearch();
       } else if (response.prompt === "View All Roles") {
         viewAllRoles(); //calling the viewAllRoles()
-        start();
+        runSearch();
       } else if (response.prompt === "Add A Role") {
         addRole(); //calling the addRole()
-        start();
+        runSearch();
       } else if (response.prompt === "Remove A Role") {
         removeRole(); //calling the removeRole()
-        start();
+        runSearch();
       } else if (response.prompt === "View All departments") {
         viewAllDepartments(); //calling the viewAllDepartments()
-        start();
+        runSearch();
       } else if (response.prompt === "Add A Department") {
         addDepartment(); //calling the addDepartment()
-        start();
+        runSearch();
       } else if (response.prompt === "Remove A Department") {
         removeDepartment(); //calling the removeDepartment()
-        start();
+        runSearch();
       } else {
         quit(); //calling the quit()
       }
     });
-}
+};
 //view
 //View All Employees function definition
 const viewAllEmployees = function () {
@@ -125,12 +125,40 @@ const viewEmployeeByManager = function () {
 //add
 //addEmployee function definition
 const addEmployee = function () {
-  connection.query("     ", function (err, res) {
-    if (err) throw err;
-    console.log("---------------------------------");
-    console.table(res);
-  });
-};
+    inquirer
+    .prompt([
+      {
+        name: "first_name",
+        type: "input",
+        message: "Enter the first name of the new employee",
+      },
+      {
+        name: "last_name",
+        type: "input",
+        message: "Enter the last name of the new employee",
+      },
+      {
+        name: "role_id",
+        type: "input",
+        message: "Enter the role of the employee",
+        // choices: pull in roles data
+      },
+      {
+        name: "manager_id",
+        type: "input",
+        message: "Select the name of the manager (if applicable)",
+        // choices: pull in manager names
+      },
+    ]).then(function(response) {
+        connection.query("INSERT INTO employee ?", {first_name: response.first_name, last_name:response.last_name, role_id:response.role_id, manager_id:response.manager_id}
+        VALUES ? ", function (err, res) {
+          if (err) throw err;
+          console.log("---------------------------------");
+          console.table(res);
+        });
+      };
+    })
+  
 //addRole function definition
 const addRole = function () {
   connection.query("     ", function (err, res) {
@@ -209,4 +237,4 @@ const quit = function () {
     console.table(res);
   });
 };
-//next steps: make funcitons functional and test as you go 
+//next steps: make functions functional and test as you go 
