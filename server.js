@@ -64,7 +64,7 @@ function runSearch() {
         addEmployee(); //calling the AddEmployee()
         start();
       } else if (response.prompt === "Remove An Employee") {
-        removeEmployee();
+        removeEmployee(); //calling the removeEmployee()
         start();
       } else if (response.prompt === "Update An Employee Role") {
         updateEmployeeRole();
@@ -76,7 +76,7 @@ function runSearch() {
         viewAllRoles(); //calling the ViewAllRoles()
         start();
       } else if (response.prompt === "Add A Role") {
-        addRole();//calling the AddRole()
+        addRole(); //calling the AddRole()
         start();
       } else if (response.prompt === "Remove A Role") {
         removeRole();
@@ -85,7 +85,7 @@ function runSearch() {
         viewAllDepartments(); //calling the ViewAllDepartments()
         start();
       } else if (response.prompt === "Add A Department") {
-        addDepartment();//calling the AddDepartment()
+        addDepartment(); //calling the AddDepartment()
         start();
       } else if (response.prompt === "Remove A Department") {
         removeDepartment();
@@ -140,6 +140,15 @@ const addRole = function () {
 };
 //addDepartment function definition
 const addDepartment = function () {
+  connection.query("     ", function (err, res) {
+    if (err) throw err;
+    console.log("---------------------------------");
+    console.table(res);
+  });
+};
+//delete
+//removeEmployee function definition
+const removeEmployee = function () {
   connection.query("     ", function (err, res) {
     if (err) throw err;
     console.log("---------------------------------");
