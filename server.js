@@ -52,43 +52,43 @@ function runSearch() {
     .then(function (response) {
       console.log(response);
       if (response.prompt === "View All Employees") {
-        ViewAllEmployees();//calling the ViewAllEmployees()
+        viewAllEmployees(); //calling the ViewAllEmployees()
         start();
       } else if (response.prompt === "View Employees By Department") {
-        ViewEmployeeByDepartment();
+        viewEmployeeByDepartment();
         start();
       } else if (response.prompt === "View All Employees By manager") {
-        ViewEmployeeByManager();
+        viewEmployeeByManager();
         start();
       } else if (response.prompt === "Add An Employee") {
-        AddEmployee();//calling the AddEmployee()
+        addEmployee(); //calling the AddEmployee()
         start();
       } else if (response.prompt === "Remove An Employee") {
-        RemoveEmployee();
+        removeEmployee();
         start();
       } else if (response.prompt === "Update An Employee Role") {
-        UpdateEmployeeRole();
+        updateEmployeeRole();
         start();
       } else if (response.prompt === "Update An Employee Manager") {
-        UpdateEmployeeManager();
+        updateEmployeeManager();
         start();
       } else if (response.prompt === "View All Roles") {
-        ViewAllRoles();//calling the ViewAllRoles()
+        viewAllRoles(); //calling the ViewAllRoles()
         start();
       } else if (response.prompt === "Add A Role") {
-        AddRole();
+        addRole();//calling the AddRole()
         start();
       } else if (response.prompt === "Remove A Role") {
-        RemoveRole();
+        removeRole();
         start();
       } else if (response.prompt === "View All departments") {
-        ViewAllDepartments();//calling the ViewAllDepartments()
+        viewAllDepartments(); //calling the ViewAllDepartments()
         start();
       } else if (response.prompt === "Add A Department") {
-        AddDepartment();
+        addDepartment();//calling the AddDepartment()
         start();
       } else if (response.prompt === "Remove A Department") {
-        RemoveDepartment();
+        removeDepartment();
         start();
       } else {
         Quit();
@@ -97,7 +97,7 @@ function runSearch() {
 }
 //view
 //View All Employees function definition
-const ViewAllEmployees = function () {
+const viewAllEmployees = function () {
   connection.query("SELECT * FROM employee", function (err, res) {
     if (err) throw err;
     console.log("---------------------------------");
@@ -105,7 +105,7 @@ const ViewAllEmployees = function () {
   });
 };
 //View All Departments function definition
-const ViewAllDepartments = function () {
+const viewAllDepartments = function () {
   connection.query("SELECT * FROM department", function (err, res) {
     if (err) throw err;
     console.log("---------------------------------");
@@ -113,7 +113,7 @@ const ViewAllDepartments = function () {
   });
 };
 //View All Roles function definition
-const ViewAllRoles = function () {
+const viewAllRoles = function () {
   connection.query("SELECT * FROM role", function (err, res) {
     if (err) throw err;
     console.log("---------------------------------");
@@ -122,21 +122,27 @@ const ViewAllRoles = function () {
 };
 
 //add
-//View All Roles function definition
-const AddEmployee = function () {
-    connection.query("     ", function (err, res) {
-      if (err) throw err;
-      console.log("---------------------------------");
-      console.table(res);
-    });
-  };
-  //View All Roles function definition
-const AddRole = function () {
-    connection.query("     ", function (err, res) {
-      if (err) throw err;
-      console.log("---------------------------------");
-      console.table(res);
-    });
-  };
-
-
+//addEmployee function definition
+const addEmployee = function () {
+  connection.query("     ", function (err, res) {
+    if (err) throw err;
+    console.log("---------------------------------");
+    console.table(res);
+  });
+};
+//addRole function definition
+const addRole = function () {
+  connection.query("     ", function (err, res) {
+    if (err) throw err;
+    console.log("---------------------------------");
+    console.table(res);
+  });
+};
+//addDepartment function definition
+const addDepartment = function () {
+  connection.query("     ", function (err, res) {
+    if (err) throw err;
+    console.log("---------------------------------");
+    console.table(res);
+  });
+};
