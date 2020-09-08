@@ -55,7 +55,7 @@ function runSearch() {
         viewAllEmployees(); //calling the ViewAllEmployees()
         start();
       } else if (response.prompt === "View Employees By Department") {
-        viewEmployeeByDepartment();
+        viewEmployeeByDepartment();//calling the viewEmployeeByDepartment()
         start();
       } else if (response.prompt === "View All Employees By manager") {
         viewEmployeeByManager();
@@ -104,7 +104,7 @@ const viewAllEmployees = function () {
     console.table(res);
   });
 };
-//View All Departments function definition
+//viewAllDepartments function definition
 const viewAllDepartments = function () {
   connection.query("SELECT * FROM department", function (err, res) {
     if (err) throw err;
@@ -112,7 +112,7 @@ const viewAllDepartments = function () {
     console.table(res);
   });
 };
-//View All Roles function definition
+//viewAllRoles function definition
 const viewAllRoles = function () {
   connection.query("SELECT * FROM role", function (err, res) {
     if (err) throw err;
@@ -120,6 +120,14 @@ const viewAllRoles = function () {
     console.table(res);
   });
 };
+//viewEmployeeByDepartment function definition
+const viewEmployeeByDepartment = function () {
+    connection.query("SELECT * FROM role", function (err, res) {
+      if (err) throw err;
+      console.log("---------------------------------");
+      console.table(res);
+    });
+  };
 //----------------------------------------------------------------------
 //add
 //addEmployee function definition
@@ -198,3 +206,4 @@ const updateEmployeeManager = function () {
     console.table(res);
   });
 };
+//----------------------------------------------------------------------
