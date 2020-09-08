@@ -52,7 +52,7 @@ function runSearch() {
     .then(function (response) {
       console.log(response);
       if (response.prompt === "View All Employees") {
-        ViewAllEmployees();
+        ViewAllEmployees();//calling the ViewAllEmployees()
         start();
       } else if (response.prompt === "View Employees By Department") {
         ViewEmployeeByDepartment();
@@ -61,7 +61,7 @@ function runSearch() {
         ViewEmployeeByManager();
         start();
       } else if (response.prompt === "Add An Employee") {
-        AddEmployee();
+        AddEmployee();//calling the AddEmployee()
         start();
       } else if (response.prompt === "Remove An Employee") {
         RemoveEmployee();
@@ -73,7 +73,7 @@ function runSearch() {
         UpdateEmployeeManager();
         start();
       } else if (response.prompt === "View All Roles") {
-        ViewAllRoles();
+        ViewAllRoles();//calling the ViewAllRoles()
         start();
       } else if (response.prompt === "Add A Role") {
         AddRole();
@@ -82,7 +82,7 @@ function runSearch() {
         RemoveRole();
         start();
       } else if (response.prompt === "View All departments") {
-        Viewdepartments();
+        ViewAllDepartments();//calling the ViewAllDepartments()
         start();
       } else if (response.prompt === "Add A Department") {
         AddDepartment();
@@ -95,6 +95,7 @@ function runSearch() {
       }
     });
 }
+//view
 //View All Employees function definition
 const ViewAllEmployees = function () {
   connection.query("SELECT * FROM employee", function (err, res) {
@@ -112,7 +113,7 @@ const ViewAllDepartments = function () {
   });
 };
 //View All Roles function definition
-const ViewRoles = function () {
+const ViewAllRoles = function () {
   connection.query("SELECT * FROM role", function (err, res) {
     if (err) throw err;
     console.log("---------------------------------");
@@ -120,5 +121,15 @@ const ViewRoles = function () {
   });
 };
 
+//add
+//View All Roles function definition
+const AddEmployee = function () {
+    connection.query("SELECT * FROM role", function (err, res) {
+      if (err) throw err;
+      console.log("---------------------------------");
+      console.table(res);
+    });
+  };
+  
 
 
