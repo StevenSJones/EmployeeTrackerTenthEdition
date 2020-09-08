@@ -68,7 +68,7 @@ function runSearch() {
           break;
 
         default:
-          quit();
+          quit();//calling the quit()
       }
     });
 }
@@ -192,4 +192,11 @@ const addRole = function () {
     });
 };
 //------------------------------------------------------------
+//undate
 //* Update employee roles
+
+
+
+//------------------------------------------------------------
+//quit
+//*quit function
