@@ -91,7 +91,7 @@ function runSearch() {
         removeDepartment(); //calling the removeDepartment()
         start();
       } else {
-        Quit();//calling the Quit()
+        Quit(); //calling the Quit()
       }
     });
 }
@@ -218,9 +218,9 @@ const updateEmployeeManager = function () {
 //QUIT
 //quit function definition
 const quit = function () {
-    connection.query("     ", function (err, res) {
-      if (err) throw err;
-      console.log("---------------------------------");
-      console.table(res);
-    });
-  };
+  connection.query("     ", function (err, res) {
+    if (err) throw err;
+    console.log("---------------------------------");
+    console.table(res);
+  });
+};
