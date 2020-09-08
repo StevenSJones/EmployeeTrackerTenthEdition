@@ -67,10 +67,10 @@ function runSearch() {
         removeEmployee(); //calling the removeEmployee()
         start();
       } else if (response.prompt === "Update An Employee Role") {
-        updateEmployeeRole();
+        updateEmployeeRole(); //calling the updateEmployeeRole()
         start();
       } else if (response.prompt === "Update An Employee Manager") {
-        updateEmployeeManager();
+        updateEmployeeManager(); //calling the updateEmployeeManager()
         start();
       } else if (response.prompt === "View All Roles") {
         viewAllRoles(); //calling the ViewAllRoles()
@@ -88,7 +88,7 @@ function runSearch() {
         addDepartment(); //calling the AddDepartment()
         start();
       } else if (response.prompt === "Remove A Department") {
-        removeDepartment();//calling the removeDepartment()
+        removeDepartment(); //calling the removeDepartment()
         start();
       } else {
         Quit();
@@ -176,9 +176,25 @@ const removeDepartment = function () {
 //update
 //updateEmployeeRole function definition
 const updateEmployeeRole = function () {
-    connection.query("     ", function (err, res) {
-      if (err) throw err;
-      console.log("---------------------------------");
-      console.table(res);
-    });
-  };
+  connection.query("     ", function (err, res) {
+    if (err) throw err;
+    console.log("---------------------------------");
+    console.table(res);
+  });
+};
+//updateEmployeeRole function definition
+const updateEmployeeRole = function () {
+  connection.query("     ", function (err, res) {
+    if (err) throw err;
+    console.log("---------------------------------");
+    console.table(res);
+  });
+};
+//updateEmployeeManager function definition
+const updateEmployeeManager = function () {
+  connection.query("     ", function (err, res) {
+    if (err) throw err;
+    console.log("---------------------------------");
+    console.table(res);
+  });
+};
