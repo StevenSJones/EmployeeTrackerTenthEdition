@@ -55,10 +55,10 @@ function runSearch() {
         viewAllEmployees(); //calling the ViewAllEmployees()
         start();
       } else if (response.prompt === "View Employees By Department") {
-        viewEmployeeByDepartment();//calling the viewEmployeeByDepartment()
+        viewEmployeeByDepartment(); //calling the viewEmployeeByDepartment()
         start();
       } else if (response.prompt === "View All Employees By manager") {
-        viewEmployeeByManager();//calling the viewEmployeeByManager()
+        viewEmployeeByManager(); //calling the viewEmployeeByManager()
         start();
       } else if (response.prompt === "Add An Employee") {
         addEmployee(); //calling the AddEmployee()
@@ -91,7 +91,7 @@ function runSearch() {
         removeDepartment(); //calling the removeDepartment()
         start();
       } else {
-        Quit();
+        Quit();//calling the Quit()
       }
     });
 }
@@ -122,20 +122,20 @@ const viewAllRoles = function () {
 };
 //viewEmployeeByDepartment function definition
 const viewEmployeeByDepartment = function () {
-    connection.query("     ", function (err, res) {
-      if (err) throw err;
-      console.log("---------------------------------");
-      console.table(res);
-    });
-  };
-  //viewEmployeeByManager function definition
+  connection.query("     ", function (err, res) {
+    if (err) throw err;
+    console.log("---------------------------------");
+    console.table(res);
+  });
+};
+//viewEmployeeByManager function definition
 const viewEmployeeByManager = function () {
-    connection.query("    ", function (err, res) {
-      if (err) throw err;
-      console.log("---------------------------------");
-      console.table(res);
-    });
-  };
+  connection.query("    ", function (err, res) {
+    if (err) throw err;
+    console.log("---------------------------------");
+    console.table(res);
+  });
+};
 //----------------------------------------------------------------------
 //add
 //addEmployee function definition
@@ -215,3 +215,12 @@ const updateEmployeeManager = function () {
   });
 };
 //----------------------------------------------------------------------
+//QUIT
+//quit function definition
+const quit = function () {
+    connection.query("     ", function (err, res) {
+      if (err) throw err;
+      console.log("---------------------------------");
+      console.table(res);
+    });
+  };
