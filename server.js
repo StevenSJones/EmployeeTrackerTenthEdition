@@ -37,7 +37,7 @@ function runSearch() {
     .then(function (response) {
       console.log(response);
       if (response.prompt === "View All Employees") {
-        viewAllEmployees(); //calling the ViewAllEmployees()
+        viewAllEmployees(); //calling the viewAllEmployees()
         start();
       } else if (response.prompt === "View Employees By Department") {
         viewEmployeeByDepartment(); //calling the viewEmployeeByDepartment()
@@ -46,7 +46,7 @@ function runSearch() {
         viewEmployeeByManager(); //calling the viewEmployeeByManager()
         start();
       } else if (response.prompt === "Add An Employee") {
-        addEmployee(); //calling the AddEmployee()
+        addEmployee(); //calling the addEmployee()
         start();
       } else if (response.prompt === "Remove An Employee") {
         removeEmployee(); //calling the removeEmployee()
@@ -58,25 +58,25 @@ function runSearch() {
         updateEmployeeManager(); //calling the updateEmployeeManager()
         start();
       } else if (response.prompt === "View All Roles") {
-        viewAllRoles(); //calling the ViewAllRoles()
+        viewAllRoles(); //calling the viewAllRoles()
         start();
       } else if (response.prompt === "Add A Role") {
-        addRole(); //calling the AddRole()
+        addRole(); //calling the addRole()
         start();
       } else if (response.prompt === "Remove A Role") {
         removeRole(); //calling the removeRole()
         start();
       } else if (response.prompt === "View All departments") {
-        viewAllDepartments(); //calling the ViewAllDepartments()
+        viewAllDepartments(); //calling the viewAllDepartments()
         start();
       } else if (response.prompt === "Add A Department") {
-        addDepartment(); //calling the AddDepartment()
+        addDepartment(); //calling the addDepartment()
         start();
       } else if (response.prompt === "Remove A Department") {
         removeDepartment(); //calling the removeDepartment()
         start();
       } else {
-        Quit(); //calling the Quit()
+        quit(); //calling the quit()
       }
     });
 }
@@ -209,3 +209,4 @@ const quit = function () {
     console.table(res);
   });
 };
+//next steps: make funcitons functional and test as you go 
