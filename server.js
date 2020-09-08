@@ -58,7 +58,7 @@ function runSearch() {
         viewEmployeeByDepartment();//calling the viewEmployeeByDepartment()
         start();
       } else if (response.prompt === "View All Employees By manager") {
-        viewEmployeeByManager();
+        viewEmployeeByManager();//calling the viewEmployeeByManager()
         start();
       } else if (response.prompt === "Add An Employee") {
         addEmployee(); //calling the AddEmployee()
@@ -122,7 +122,15 @@ const viewAllRoles = function () {
 };
 //viewEmployeeByDepartment function definition
 const viewEmployeeByDepartment = function () {
-    connection.query("SELECT * FROM role", function (err, res) {
+    connection.query("     ", function (err, res) {
+      if (err) throw err;
+      console.log("---------------------------------");
+      console.table(res);
+    });
+  };
+  //viewEmployeeByManager function definition
+const viewEmployeeByManager = function () {
+    connection.query("    ", function (err, res) {
       if (err) throw err;
       console.log("---------------------------------");
       console.table(res);
