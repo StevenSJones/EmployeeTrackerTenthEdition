@@ -79,7 +79,7 @@ function runSearch() {
         addRole(); //calling the AddRole()
         start();
       } else if (response.prompt === "Remove A Role") {
-        removeRole();
+        removeRole(); //calling the removeRole()
         start();
       } else if (response.prompt === "View All departments") {
         viewAllDepartments(); //calling the ViewAllDepartments()
@@ -88,7 +88,7 @@ function runSearch() {
         addDepartment(); //calling the AddDepartment()
         start();
       } else if (response.prompt === "Remove A Department") {
-        removeDepartment();
+        removeDepartment();//calling the removeDepartment()
         start();
       } else {
         Quit();
@@ -149,6 +149,22 @@ const addDepartment = function () {
 //delete
 //removeEmployee function definition
 const removeEmployee = function () {
+  connection.query("     ", function (err, res) {
+    if (err) throw err;
+    console.log("---------------------------------");
+    console.table(res);
+  });
+};
+//removeRole function definition
+const removeRole = function () {
+  connection.query("     ", function (err, res) {
+    if (err) throw err;
+    console.log("---------------------------------");
+    console.table(res);
+  });
+};
+//removeDepartment function definition
+const removeDepartment = function () {
   connection.query("     ", function (err, res) {
     if (err) throw err;
     console.log("---------------------------------");
