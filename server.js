@@ -124,12 +124,19 @@ const ViewAllRoles = function () {
 //add
 //View All Roles function definition
 const AddEmployee = function () {
-    connection.query("SELECT * FROM role", function (err, res) {
+    connection.query("     ", function (err, res) {
       if (err) throw err;
       console.log("---------------------------------");
       console.table(res);
     });
   };
-  
+  //View All Roles function definition
+const AddRole = function () {
+    connection.query("     ", function (err, res) {
+      if (err) throw err;
+      console.log("---------------------------------");
+      console.table(res);
+    });
+  };
 
 
