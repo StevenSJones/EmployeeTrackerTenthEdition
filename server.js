@@ -120,7 +120,7 @@ const viewAllRoles = function () {
     console.table(res);
   });
 };
-
+//----------------------------------------------------------------------
 //add
 //addEmployee function definition
 const addEmployee = function () {
@@ -146,6 +146,7 @@ const addDepartment = function () {
     console.table(res);
   });
 };
+//----------------------------------------------------------------------
 //delete
 //removeEmployee function definition
 const removeEmployee = function () {
@@ -171,3 +172,13 @@ const removeDepartment = function () {
     console.table(res);
   });
 };
+//----------------------------------------------------------------------
+//update
+//updateEmployeeRole function definition
+const updateEmployeeRole = function () {
+    connection.query("     ", function (err, res) {
+      if (err) throw err;
+      console.log("---------------------------------");
+      console.table(res);
+    });
+  };
