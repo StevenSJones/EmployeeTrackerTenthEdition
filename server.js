@@ -68,7 +68,7 @@ function runSearch() {
           break;
 
         default:
-          quit(); //calling the quit()
+          process.exit();
       }
     });
 }
@@ -134,7 +134,7 @@ const addEmployee = function () {
       var sqlQuery = `INSERT INTO employee (first_name, last_name, role_id, manager_id)
         VALUES ('${response.first_name}', '${response.last_name}', ${response.role_id}, ${response.manager_id})`; //this is the sql that is sent to the database
       connection.query(sqlQuery, function (err, res) {
-        //connect ot database and pass through the query made above
+        //connect to database and pass through the query made above
         if (err) throw err;
         viewAllEmployees();
       });
@@ -194,36 +194,54 @@ const addRole = function () {
 //update
 //* Update employee roles
 const updateEmployeeRole = function () {
-  inquirer.prompt([
-    {
-      name: "title",
-      type: "input",
-      message: "What department would you like to update?",
-      choices: [
-        {
-          value: "1",
-          name: "Sales",
-        },
-        {
-          value: "2",
-          name: "Engineering",
-        },
-        {
-          value: "3",
-          name: "Finance",
-        },
-        {
-          value: "4",
-          name: "Legal",
-        },
-      ],
-    },
-  ])
-  .then(function(response){
-      console.log(response);
-  });
+    let employeeName;
+    let employeeMap = {};
+    connection.query("SELECT * FROM employee", function(err, res){
+        if (err) throw err;
+        let employees = [];
+        for(let i = 0; i < res.length; i++){
+            employees.push(res[i].first_name + ' ' + res[i].last_name);
+            res[i].id = employeeMap[res[i]].first_name + ' ' + [res[i]].last_name
+        }
+        inquirer.prompt([
+            {
+                name: "employee",
+                type: "list",
+                message: "Which employee would you like to update?",
+                choices: employees,
+              },
+        ]).then(function(response) {
+            let roleMap = {};
+            employeeName = response.employee;
+            connection.query("SELECT * FROM role", function(err, res){
+                if (err) throw err;
+                let roles = [];
+                for(let i = 0; i < res.length; i++){
+                    roles.push(res[i].title);
+                    roleMap[res[i].title] = res[i].id;
+                }
+                inquirer.prompt([
+                  {
+                    name: "role",
+                    type: "list",
+                    message: `What role would you like to assign to ${employeeName}?`,
+                    choices: roles
+                  },
+                ])
+                .then(function (response) {
+                  //create sql statement as a string template literal
+                  var sqlQuery = `UPDATE employee SET role_id = ${roleMap[response.role]} WHERE id = employeeMap[employeeName]`; //this is the sql that is sent to the database
+                  connection.query(sqlQuery, function (err, res) {
+                    //connect to database and pass through the query made above
+                    if (err) throw err;
+                    viewAllEmployees();
+                  });
+                });
+                
+            });
+        })
+    })
 };
 
 //------------------------------------------------------------
-//quit
-//*quit function
+
