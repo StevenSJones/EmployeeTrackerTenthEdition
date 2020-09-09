@@ -68,7 +68,7 @@ function runSearch() {
           break;
 
         default:
-          quit();//calling the quit()
+          quit(); //calling the quit()
       }
     });
 }
@@ -160,7 +160,6 @@ const addDepartment = function () {
       });
     });
 };
-//------------------------------------------------------------
 //add role
 const addRole = function () {
   inquirer
@@ -192,10 +191,38 @@ const addRole = function () {
     });
 };
 //------------------------------------------------------------
-//undate
+//update
 //* Update employee roles
-
-
+const updateEmployeeRole = function () {
+  inquirer.prompt([
+    {
+      name: "title",
+      type: "input",
+      message: "What department would you like to update?",
+      choices: [
+        {
+          value: "1",
+          name: "Sales",
+        },
+        {
+          value: "2",
+          name: "Engineering",
+        },
+        {
+          value: "3",
+          name: "Finance",
+        },
+        {
+          value: "4",
+          name: "Legal",
+        },
+      ],
+    },
+  ])
+  .then(function(response){
+      console.log(response);
+  });
+};
 
 //------------------------------------------------------------
 //quit
