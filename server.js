@@ -119,7 +119,7 @@ const addEmployee = function () {
       {
         name: "role_id",
         type: "input",
-        message: "Enter the role of the employee",
+        message: "Enter the role ID of the employee",
         // choices: pull in roles data
       },
       {
@@ -152,11 +152,11 @@ const addDepartment = function () {
     ])
     .then(function (response) {
       //create sql statement as a string template literal
-      var sqlQuery = `INSERT INTO employee (departmentName)
-        VALUES ('${response.departmentName}'`;
+      var sqlQuery = `INSERT INTO department (departmentName)
+        VALUES ('${response.departmentName}')`;
       connection.query(sqlQuery, function (err, res) {
         if (err) throw err;
-        viewAllEmployees();
+        viewAllDepartments();
       });
     });
 };
@@ -175,18 +175,18 @@ const addRole = function () {
         message: "Enter the salary of the new role",
       },
       {
-        name: "department",
+        name: "department_id",
         type: "input",
-        message: "Enter the department of the new role.",
+        message: "Enter the department Id of the new role.",
       },
     ])
     .then(function (response) {
       //create sql statement as a string template literal
-      var sqlQuery = `INSERT INTO role (title, salary, department)
-        VALUES ('${response.title}', '${response.salary}', ${response.department}`;
+      var sqlQuery = `INSERT INTO role (title, salary, department_id)
+        VALUES ('${response.title}', '${response.salary}', ${response.department_id})`;
       connection.query(sqlQuery, function (err, res) {
         if (err) throw err;
-        viewAllEmployees();
+        viewAllRoles();
       });
     });
 };
