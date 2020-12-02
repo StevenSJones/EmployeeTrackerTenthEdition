@@ -1,7 +1,7 @@
 //importing my node modules
 const mysql = require("mysql");
 const inquirer = require("inquirer");
-//seeting up to connect to server (like dialing the phone)
+//setting up to connect to server (like dialing the phone)
 const connection = mysql.createConnection({
   host: "localhost",
   // Your port; if not 3306
