@@ -5,6 +5,7 @@
 > This app is designed to track employees and create new ones all through the CLI."
 > [employee tracker](https://youtu.be/wgLZ7-8OZMQ)
 > ![Employee Tracker](Assets/employee-tracker.gif)
+> ![Screen Shot 2021-01-02 at 6 34 09 PM](https://user-images.githubusercontent.com/56704209/103470032-1cad0b80-4d2a-11eb-9517-b6d9f8480f13.png)
 ## Table Of Contents:
 - [Title](#Title)
 - [Description](#Description)
@@ -17,6 +18,7 @@
 - [Further Contact](#FurtherContact)
 ## Prerequisites:
 > MySQL : npm i mysql, inquirerjs : npm i inquirer, console.table : npm install console.table --save
+> start script: node server.js
 ## Tests:
 > None
 ## Contributing:
