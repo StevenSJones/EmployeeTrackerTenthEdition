@@ -1,43 +1,29 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/stevensjones/employeetrackertenthedition)
-
-# Project Title: Employee Tracker Tenth Edition
-
-## description: 
->This app is designed to track employees and create new ones all through the CLI."
-
-## Table of Contents:
-- [title](#title)
+# Project Title: 
+> Employee Tracker Tenth Edition
+## Description: 
+> This app is designed to track employees and create new ones all through the CLI."
+> [employee tracker](https://youtu.be/wgLZ7-8OZMQ)
+> ![Employee Tracker](Assets/employee-tracker.gif)
+## Table Of Contents:
+- [Title](#Title)
+- [Description](#Description)
+- [Table Of Contents](#TableOfContents)
 - [Prerequisites](#Prerequisites)
 - [Tests](#Tests)
 - [Contributing](#Contributing)
 - [Usage](#Usage) 
 - [License](#License)
-
+- [Further Contact](#FurtherContact)
 ## Prerequisites:
->* Use the [MySQL](https://www.npmjs.com/package/mysql) NPM package to connect to your MySQL database and perform queries.
-
->* Use [InquirerJs](https://www.npmjs.com/package/inquirer/v/0.2.3) NPM package to interact with the user via the command-line.
-
->* Use [console.table](https://www.npmjs.com/package/console.table) to print MySQL rows to the console. There is a built-in version of `console.table`, but the NPM package formats the data a little better for our purposes.
-    
-## Usage:
-> For anyone looking to manage there employees they can do so through this database.
-    
+> MySQL : npm i mysql, inquirerjs : npm i inquirer, console.table : npm install console.table --save
 ## Tests:
-> none
-    
+> None
 ## Contributing:
-> steven jones
-
-    
+> Steven Jones
+## Usage:
+> For anyone looking to manage there employees they can do so through this database. 
 ## License
-> [License Info](https://opensource.org/licenses/lot )
-This project is licensed. 
-
+> © 2020 Steven Jones. All Rights Reserved 
 ## Further Contact:
 > Feel free to reach out to me with questions involving this project on GITHUB at : [stevensjones](https://github.com/stevensjones);
-
->[employee tracker](https://youtu.be/wgLZ7-8OZMQ)
-
->![Employee Tracker](Assets/employee-tracker.gif)
-
